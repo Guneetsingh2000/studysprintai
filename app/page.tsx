@@ -1,106 +1,147 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
+
       {/* Navigation */}
-      <nav className="bg-white shadow-sm">
+      <nav className="bg-white shadow-sm border-b border-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <span className="text-xl font-bold text-primary-600">
-                Capstone Manager
-              </span>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Link
-                href="/auth/signin"
-                className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Sign In
+          <div className="flex justify-between h-16 items-center">
+
+            <span className="text-xl font-bold text-blue-700">
+              StudySprint AI
+            </span>
+
+            <div className="flex space-x-6">
+              <Link href="/" className="text-blue-900 hover:text-blue-600 font-medium">
+                Home
               </Link>
-              <Link
-                href="/auth/signup"
-                className="bg-primary-600 text-white hover:bg-primary-700 px-4 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Get Started
+
+              <Link href="/about" className="text-blue-900 hover:text-blue-600 font-medium">
+                About
+              </Link>
+
+              <Link href="/features" className="text-blue-900 hover:text-blue-600 font-medium">
+                Features
+              </Link>
+
+              <Link href="/contact" className="text-blue-900 hover:text-blue-600 font-medium">
+                Contact
               </Link>
             </div>
+
           </div>
         </div>
       </nav>
 
+
       {/* Hero Section */}
-      <section className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Manage Your Capstone Project
-            <span className="text-primary-600"> Effortlessly</span>
+      <section className="flex-1 flex items-center justify-center px-6 py-20 bg-blue-50">
+        <div className="text-center max-w-3xl">
+
+          <h1 className="text-5xl font-extrabold text-blue-900 mb-6 tracking-tight">
+            Study Smarter with <span className="text-blue-600">StudySprint AI</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Collaborate with your team, track tasks, and deliver your capstone project on time.
-            Built for students, by students.
+
+          <p className="text-xl text-blue-800 mb-4 font-medium">
+            AI-powered tools to help students stay organized and succeed
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          
+          <p className="text-lg text-blue-700 mb-10">
+            StudySprint AI helps students manage deadlines, build study schedules, and improve productivity using simple, intuitive artificial intelligence.
+          </p>
+
+          <div className="flex justify-center gap-4">
             <Link
-              href="/auth/signup"
-              className="bg-primary-600 text-white hover:bg-primary-700 px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
+              href="/features"
+              className="bg-blue-600 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-blue-700 shadow-md transition-colors"
             >
-              Start Your Project
+              Explore Features
             </Link>
+
             <Link
-              href="/auth/signin"
-              className="bg-white text-primary-600 border-2 border-primary-600 hover:bg-primary-50 px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
+              href="/signup"
+              className="bg-white border-2 border-blue-600 text-blue-700 px-8 py-3.5 rounded-lg font-semibold hover:bg-blue-50 shadow-sm transition-colors"
             >
-              Sign In
+              Get Started
             </Link>
           </div>
+
         </div>
       </section>
+
 
       {/* Features Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Everything You Need
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
+
+          <h2 className="text-3xl font-bold text-center text-blue-900 mb-14">
+            Platform Features
           </h2>
+
           <div className="grid md:grid-cols-3 gap-8">
+
             <FeatureCard
-              title="Project Management"
-              description="Create projects, set milestones, and track progress from start to finish."
-              icon="📋"
+              icon="📅"
+              title="AI Study Planner"
+              description="Automatically generate optimized study schedules based on your courses and deadlines."
             />
+
             <FeatureCard
-              title="Team Collaboration"
-              description="Invite team members, assign tasks, and communicate effectively."
-              icon="👥"
+              icon="⏰"
+              title="Assignment Reminders"
+              description="Never miss a deadline with smart reminders and task tracking."
             />
+
             <FeatureCard
-              title="Task Tracking"
-              description="Break down work into tasks, set priorities, and never miss a deadline."
-              icon="✅"
+              icon="🤖"
+              title="AI Study Assistant"
+              description="Ask questions, review concepts, and get personalized learning support."
             />
+
           </div>
+
         </div>
       </section>
 
+
       {/* Footer */}
-      <footer className="bg-gray-50 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600">
-          <p>Sample Next.js Project for Capstone Course</p>
-          <p className="text-sm mt-2">Built with Next.js, PostgreSQL, Prisma, and NextAuth.js</p>
+      <footer className="bg-blue-50 py-10 border-t border-blue-100">
+        <div className="text-center text-blue-800">
+
+          <p className="font-bold text-blue-900">StudySprint AI</p>
+
+          <p className="text-sm mt-2">
+            AI-powered productivity tools for college and university students
+          </p>
+
+          <p className="text-sm mt-4 text-blue-600">
+            © 2026 StudySprint AI
+          </p>
+
         </div>
       </footer>
+
     </main>
   );
 }
 
-function FeatureCard({ title, description, icon }: { title: string; description: string; icon: string }) {
+
+function FeatureCard({ title, description, icon }) {
   return (
-    <div className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-      <div className="text-4xl mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+    <div className="bg-blue-50 rounded-2xl p-8 text-center hover:shadow-xl transition-all border border-blue-100 hover:-translate-y-1">
+
+      <div className="text-4xl mb-6">{icon}</div>
+
+      <h3 className="text-xl font-bold text-blue-900 mb-3">
+        {title}
+      </h3>
+
+      <p className="text-blue-800 leading-relaxed">
+        {description}
+      </p>
+
     </div>
   );
 }

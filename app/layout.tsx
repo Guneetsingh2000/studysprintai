@@ -6,8 +6,8 @@ import { AuthProvider } from '@/app/contexts/AuthProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Capstone Project Manager',
-  description: 'A project management tool for capstone teams',
+  title: 'StudySprint AI',
+  description: 'AI-powered tools to help students stay organized and succeed',
 };
 
 export default function RootLayout({
