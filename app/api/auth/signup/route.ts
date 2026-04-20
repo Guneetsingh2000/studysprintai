@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import prisma from '@/prisma/client';
+import { sendWelcomeEmail } from '@/app/utils/email/sendWelcomeEmail';
+import { sendAssignmentReminderEmail } from '@/app/utils/email/sendAssignmentReminderEmail';
 
 export async function POST(request: NextRequest) {
   try {
@@ -66,6 +68,23 @@ export async function POST(request: NextRequest) {
         createdAt: true,
       },
     });
+
+    try {
+      await sendWelcomeEmail(user.email, user.firstName);
+    } catch (emailError) {
+      console.error('Welcome email failed:', emailError);
+    }
+
+    try {
+      await sendAssignmentReminderEmail(
+        user.email,
+        user.firstName,
+        "Sample Assignment",
+        "April 25"
+      );
+    } catch (error) {
+      console.error("Assignment reminder email failed:", error);
+    }
 
     return NextResponse.json(
       {

@@ -61,7 +61,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="/signup"
+              href="/auth/signup"
               className="bg-white border-2 border-blue-600 text-blue-700 px-8 py-3.5 rounded-lg font-semibold hover:bg-blue-50 shadow-sm transition-colors"
             >
               Get Started
