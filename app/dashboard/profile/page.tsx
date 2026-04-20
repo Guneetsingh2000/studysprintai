@@ -178,7 +178,7 @@ export default function ProfilePage() {
             <p className="text-2xl font-bold text-gray-900">
               {profile._count.ownedProjects}
             </p>
-            <p className="text-sm text-gray-500">Projects Owned</p>
+            <p className="text-sm text-gray-500">Courses Owned</p>
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold text-gray-900">
@@ -190,7 +190,7 @@ export default function ProfilePage() {
             <p className="text-2xl font-bold text-gray-900">
               {profile._count.tasks}
             </p>
-            <p className="text-sm text-gray-500">Tasks Assigned</p>
+            <p className="text-sm text-gray-500">Assignments Given</p>
           </div>
         </div>
 

@@ -124,8 +124,8 @@ export default function TasksPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Tasks</h1>
-          <p className="mt-1 text-gray-600">View and manage all your tasks</p>
+          <h1 className="text-2xl font-bold text-gray-900">Assignments</h1>
+          <p className="mt-1 text-gray-600">View and manage all your assignments</p>
         </div>
       </div>
 
@@ -180,12 +180,12 @@ export default function TasksPage() {
         <div className="bg-white rounded-xl shadow-sm p-12 text-center">
           <div className="text-4xl mb-4">✅</div>
           <h3 className="text-lg font-medium text-gray-900 mb-2">
-            {tasks.length === 0 ? 'No tasks yet' : 'No tasks match your filters'}
+            {tasks.length === 0 ? 'No assignments yet' : 'No assignments match your filters'}
           </h3>
           <p className="text-gray-500">
             {tasks.length === 0
-              ? 'Tasks will appear here when you create them in your projects.'
-              : 'Try adjusting your filters to see more tasks.'}
+              ? 'Assignments will appear here when you create them in your courses.'
+              : 'Try adjusting your filters to see more assignments.'}
           </p>
         </div>
       ) : (
@@ -194,10 +194,10 @@ export default function TasksPage() {
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Task
+                  Assignment
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Project
+                  Course
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Status

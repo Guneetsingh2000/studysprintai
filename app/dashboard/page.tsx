@@ -106,17 +106,17 @@ export default function DashboardPage() {
           Welcome back, {session?.user.firstName}!
         </h1>
         <p className="mt-1 text-gray-600">
-          Here&apos;s an overview of your projects and tasks.
+          Here&apos;s an overview of your courses and assignments.
         </p>
       </div>
 
       {/* Stats cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <StatCard title="Projects" value={projects.length} icon="📁" color="blue" />
-        <StatCard title="Active Tasks" value={myTasks.length} icon="📋" color="yellow" />
-        <StatCard title="Completed" value={completedTasks.length} icon="✅" color="green" />
+        <StatCard title="Courses" value={projects.length} icon="📁" color="blue" />
+        <StatCard title="Upcoming Assignments" value={myTasks.length} icon="📝" color="yellow" />
+        <StatCard title="Completed Assignments" value={completedTasks.length} icon="✅" color="green" />
         <StatCard
-          title="Total Tasks"
+          title="Total Assignments"
           value={tasks.length}
           icon="📊"
           color="purple"
@@ -128,7 +128,7 @@ export default function DashboardPage() {
         {/* Projects */}
         <div className="bg-white rounded-xl shadow-sm p-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold text-gray-900">Your Projects</h2>
+            <h2 className="text-lg font-semibold text-gray-900">Your Courses</h2>
             <Link
               href="/dashboard/projects"
               className="text-sm text-primary-600 hover:text-primary-700"
@@ -138,12 +138,12 @@ export default function DashboardPage() {
           </div>
           {projects.length === 0 ? (
             <div className="text-center py-8 text-gray-500">
-              <p>No projects yet</p>
+              <p>No courses yet</p>
               <Link
                 href="/dashboard/projects/new"
                 className="mt-2 inline-block text-primary-600 hover:text-primary-700"
               >
-                Create your first project
+                Add your first course
               </Link>
             </div>
           ) : (
@@ -157,7 +157,7 @@ export default function DashboardPage() {
                     <div>
                       <p className="font-medium text-gray-900">{project.name}</p>
                       <p className="text-sm text-gray-500">
-                        {project._count.tasks} tasks
+                        {project._count.tasks} assignments
                       </p>
                     </div>
                     <span
@@ -177,7 +177,7 @@ export default function DashboardPage() {
         {/* Tasks */}
         <div className="bg-white rounded-xl shadow-sm p-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold text-gray-900">Active Tasks</h2>
+            <h2 className="text-lg font-semibold text-gray-900">Upcoming Assignments</h2>
             <Link
               href="/dashboard/tasks"
               className="text-sm text-primary-600 hover:text-primary-700"
@@ -187,7 +187,7 @@ export default function DashboardPage() {
           </div>
           {myTasks.length === 0 ? (
             <div className="text-center py-8 text-gray-500">
-              <p>No active tasks</p>
+              <p>No upcoming assignments</p>
             </div>
           ) : (
             <ul className="space-y-3">

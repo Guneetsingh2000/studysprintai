@@ -84,14 +84,14 @@ export default function ProjectsPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Projects</h1>
-          <p className="mt-1 text-gray-600">Manage your capstone projects</p>
+          <h1 className="text-2xl font-bold text-gray-900">Courses</h1>
+          <p className="mt-1 text-gray-600">Manage your enrolled courses</p>
         </div>
         <button
           onClick={() => setShowModal(true)}
           className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors"
         >
-          New Project
+          Add Course
         </button>
       </div>
 
@@ -99,15 +99,15 @@ export default function ProjectsPage() {
       {projects.length === 0 ? (
         <div className="bg-white rounded-xl shadow-sm p-12 text-center">
           <div className="text-4xl mb-4">📁</div>
-          <h3 className="text-lg font-medium text-gray-900 mb-2">No projects yet</h3>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">No courses yet</h3>
           <p className="text-gray-500 mb-4">
-            Create your first project to get started with your capstone.
+            Add your first course to get started with your studying.
           </p>
           <button
             onClick={() => setShowModal(true)}
             className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors"
           >
-            Create Project
+            Add Course
           </button>
         </div>
       ) : (
@@ -222,7 +222,7 @@ function CreateProjectModal({
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-xl shadow-xl max-w-md w-full mx-4 p-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Create New Project</h2>
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">Add New Course</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
@@ -233,7 +233,7 @@ function CreateProjectModal({
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Project Name *
+              Course Name *
             </label>
             <input
               type="text"
@@ -241,7 +241,7 @@ function CreateProjectModal({
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-              placeholder="My Capstone Project"
+              placeholder="E.g. Computer Science 101"
             />
           </div>
 
@@ -300,7 +300,7 @@ function CreateProjectModal({
               disabled={isLoading}
               className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:opacity-50 transition-colors"
             >
-              {isLoading ? 'Creating...' : 'Create Project'}
+              {isLoading ? 'Adding...' : 'Add Course'}
             </button>
           </div>
         </form>

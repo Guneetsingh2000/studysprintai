@@ -145,7 +145,7 @@ export default function ProjectDetailPage() {
         <div>
           <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
             <Link href="/dashboard/projects" className="hover:text-primary-600">
-              Projects
+              Courses
             </Link>
             <span>/</span>
             <span>{project.name}</span>
@@ -159,7 +159,7 @@ export default function ProjectDetailPage() {
           onClick={() => setShowTaskModal(true)}
           className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors"
         >
-          Add Task
+          Add Assignment
         </button>
       </div>
 
@@ -233,7 +233,7 @@ export default function ProjectDetailPage() {
           <div className="space-y-4">
             <div>
               <div className="flex justify-between text-sm mb-1">
-                <span className="text-gray-600">Tasks Completed</span>
+                <span className="text-gray-600">Assignments Completed</span>
                 <span className="font-medium">
                   {tasksByStatus.DONE.length} / {project.tasks.length}
                 </span>
@@ -274,7 +274,7 @@ export default function ProjectDetailPage() {
 
       {/* Kanban board */}
       <div className="bg-white rounded-xl shadow-sm p-6">
-        <h3 className="font-semibold text-gray-900 mb-4">Tasks</h3>
+        <h3 className="font-semibold text-gray-900 mb-4">Assignments</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {(['TODO', 'IN_PROGRESS', 'IN_REVIEW', 'DONE'] as const).map((status) => (
             <div key={status} className="bg-gray-50 rounded-lg p-4">
@@ -308,7 +308,7 @@ export default function ProjectDetailPage() {
                 ))}
                 {tasksByStatus[status].length === 0 && (
                   <li className="text-center text-gray-400 text-sm py-4">
-                    No tasks
+                    No assignments
                   </li>
                 )}
               </ul>
@@ -391,7 +391,7 @@ function CreateTaskModal({
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-xl shadow-xl max-w-md w-full mx-4 p-6 max-h-[90vh] overflow-y-auto">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Create New Task</h2>
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">Add New Assignment</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
@@ -410,7 +410,7 @@ function CreateTaskModal({
               value={formData.title}
               onChange={(e) => setFormData({ ...formData, title: e.target.value })}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-              placeholder="Task title"
+              placeholder="Assignment title"
             />
           </div>
 
@@ -425,7 +425,7 @@ function CreateTaskModal({
               }
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
               rows={3}
-              placeholder="Task description..."
+              placeholder="Assignment description..."
             />
           </div>
 
@@ -518,7 +518,7 @@ function CreateTaskModal({
               disabled={isLoading}
               className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:opacity-50 transition-colors"
             >
-              {isLoading ? 'Creating...' : 'Create Task'}
+              {isLoading ? 'Adding...' : 'Add Assignment'}
             </button>
           </div>
         </form>

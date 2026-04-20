@@ -35,8 +35,8 @@ export default function DashboardLayout({
 
   const navigation = [
     { name: 'Dashboard', href: '/dashboard', icon: '🏠' },
-    { name: 'Projects', href: '/dashboard/projects', icon: '📁' },
-    { name: 'Tasks', href: '/dashboard/tasks', icon: '✅' },
+    { name: 'Courses', href: '/dashboard/projects', icon: '📁' },
+    { name: 'Assignments', href: '/dashboard/tasks', icon: '📝' },
     { name: 'Profile', href: '/dashboard/profile', icon: '👤' },
   ];
 
