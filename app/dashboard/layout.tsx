@@ -40,6 +40,11 @@ export default function DashboardLayout({
     { name: 'Profile', href: '/dashboard/profile', icon: '👤' },
   ];
 
+  const footerNavigation = [
+    { name: 'Terms of Service', href: '/terms', icon: '📜' },
+    { name: 'Privacy Policy', href: '/privacy', icon: '🔒' },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Mobile sidebar backdrop */}
@@ -69,6 +74,28 @@ export default function DashboardLayout({
             {navigation.map((item) => {
               const isActive = pathname === item.href ||
                 (item.href !== '/dashboard' && pathname.startsWith(item.href));
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsSidebarOpen(false)}
+                  className={`flex items-center px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                    isActive
+                      ? 'bg-primary-50 text-primary-700'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  <span className="mr-3">{item.icon}</span>
+                  {item.name}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Footer Navigation */}
+          <nav className="border-t px-4 py-4 space-y-1">
+            {footerNavigation.map((item) => {
+              const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.name}

@@ -116,6 +116,12 @@ export default function Home() {
             AI-powered productivity tools for college and university students
           </p>
 
+          <div className="mt-4 flex justify-center">
+            <Link href="/privacy" className="text-sm text-blue-700 hover:text-blue-900 hover:underline transition-colors font-medium">
+              Privacy Policy
+            </Link>
+          </div>
+
           <p className="text-sm mt-4 text-blue-600">
             © 2026 StudySprint AI
           </p>
